@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" 
+            text="back"
+            color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">registro</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-card>
+    <ion-card-header style="background-color:rgb(42, 59, 207)">
+      <ion-card-title>Registrarse</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form #formulario="ngForm" (keyup.enter)="Registrar()">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Nombre de usuario: </ion-label>
+            <ion-input type="text" placeholder="Digite su nombre de usuario.." 
+                      name="nombre" [(ngModel)]="usuario.nombre"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Email: </ion-label>
+            <ion-input type="email" placeholder="Digite su email.."
+                      name="email" [(ngModel)]="usuario.email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Edad: </ion-label>
+            <ion-input type="number" placeholder="Digite su edad.."
+                      name="edad" [(ngModel)]="usuario.edad"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Contraseña: </ion-label>
+            <ion-input type="password" placeholder="Ingrese una contraseña.."
+                     name="password" [(ngModel)]="usuario.password"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button (click)="Registrar()" expand="block" fill="solid" color="warning" shape="round">
+          Registrar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+  <img src="assets/logo.jpg" alt="Logo de la aplicación" class="logo">
+
+
+</ion-content>
